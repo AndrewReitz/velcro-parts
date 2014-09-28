@@ -1,3 +1,4 @@
 include ':velcro-infinitescroll'
 include ':velcro-betterviewanimator'
+include ':velcro-bindableadapter'
 rootProject.name = 'velcro-parts'
