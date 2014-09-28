@@ -1,4 +1,4 @@
-package com.andrewreitz.velcro;
+package com.andrewreitz.velcro.infinitescroll;
 
 import android.widget.AbsListView;
 

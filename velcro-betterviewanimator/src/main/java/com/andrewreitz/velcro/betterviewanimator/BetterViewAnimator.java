@@ -1,4 +1,4 @@
-package com.andrewreitz.velcro;
+package com.andrewreitz.velcro.betterviewanimator;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
