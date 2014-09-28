@@ -31,7 +31,7 @@ public class BetterViewAnimator extends ViewAnimator {
   }
 
   /** Get the id this ViewAnimator is currently displaying */
-  public int getDisplayedChildId() {
+  @IdRes public int getDisplayedChildId() {
     return getChildAt(getDisplayedChild()).getId();
   }
 }
