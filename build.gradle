@@ -1,0 +1,24 @@
+subprojects {
+  buildscript {
+    repositories {
+      jcenter()
+    }
+    dependencies {
+      classpath 'com.android.tools.build:gradle:0.13.+'
+    }
+  }
+
+  repositories {
+    jcenter()
+  }
+
+  group = GROUP
+  version = VERSION_NAME
+}
+
+ext {
+  minSdkVersion = 7
+  compileSdkVersion = 20
+  buildToolsVersion = '20.0.0'
+}
+

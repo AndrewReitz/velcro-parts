@@ -1,0 +1,3 @@
+include ':velcro-infinitescroll'
+include ':velcro-betterviewanimator'
+rootProject.name = 'velcro-parts'
