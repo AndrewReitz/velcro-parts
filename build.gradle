@@ -5,6 +5,8 @@ subprojects {
     }
     dependencies {
       classpath 'com.android.tools.build:gradle:0.13.+'
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:0.6'
+      classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:3.0.1'
     }
   }
 

@@ -24,3 +24,9 @@ android {
 }
 
 apply from: rootProject.file('gradle/checkstyle.gradle')
+apply from: rootProject.file('gradle/credentials.gradle')
+apply from: rootProject.file('gradle/compile.gradle')
+apply from: rootProject.file('gradle/publishing.gradle')
+apply from: rootProject.file('gradle/bintray.gradle')
+apply from: rootProject.file('gradle/artifactory.gradle')
+
