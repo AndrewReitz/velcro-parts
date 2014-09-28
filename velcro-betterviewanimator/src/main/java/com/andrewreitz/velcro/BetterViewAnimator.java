@@ -5,7 +5,12 @@ import android.support.annotation.IdRes;
 import android.util.AttributeSet;
 import android.widget.ViewAnimator;
 
-/** A View Animator that Easily allows setting which view is to be displayed */
+/**
+ * A View Animator that Easily allows setting which view is to be displayed
+ * See https://github.com/JakeWharton/u2020
+ *
+ * @author Jake Wharton
+ */
 public class BetterViewAnimator extends ViewAnimator {
   public BetterViewAnimator(Context context, AttributeSet attrs) {
     super(context, attrs);

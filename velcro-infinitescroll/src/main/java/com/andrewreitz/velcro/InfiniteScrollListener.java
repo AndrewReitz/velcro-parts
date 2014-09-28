@@ -2,7 +2,12 @@ package com.andrewreitz.velcro;
 
 import android.widget.AbsListView;
 
-/** Scroll listener to be extended for infinite scrolling. */
+/**
+ * Scroll listener to be extended for infinite scrolling.
+ * See http://www.avocarrot.com/blog/implement-infinitely-scrolling-list-android
+ *
+ * @author Panayiotis Papageorgiou
+ */
 public abstract class InfiniteScrollListener implements AbsListView.OnScrollListener {
   private final int bufferItemCount;
 
