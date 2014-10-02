@@ -10,6 +10,7 @@ import android.widget.ViewAnimator;
  * See https://github.com/JakeWharton/u2020
  *
  * @author Jake Wharton
+ * @author Andrew Reitz
  */
 public class BetterViewAnimator extends ViewAnimator {
   public BetterViewAnimator(Context context, AttributeSet attrs) {

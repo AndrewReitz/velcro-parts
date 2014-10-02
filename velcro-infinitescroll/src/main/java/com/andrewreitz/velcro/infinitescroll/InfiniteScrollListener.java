@@ -7,6 +7,7 @@ import android.widget.AbsListView;
  * See http://www.avocarrot.com/blog/implement-infinitely-scrolling-list-android
  *
  * @author Panayiotis Papageorgiou
+ * @author Andrew Reitz
  */
 public abstract class InfiniteScrollListener implements AbsListView.OnScrollListener {
   private final int bufferItemCount;
@@ -33,14 +34,14 @@ public abstract class InfiniteScrollListener implements AbsListView.OnScrollList
    * @param totalItemsCount The total number of items that have been loaded into the adapter this
    * scroll listener is atached to.
    */
-  public abstract void loadMore(int page, int totalItemsCount);
+  protected abstract void loadMore(int page, int totalItemsCount);
 
   /** {@inheritDoc} */
   @Override public void onScrollStateChanged(AbsListView view, int scrollState) {
     // Do Nothing
   }
 
-  /** @inheritDoc */
+  /** {@inheritDoc} */
   @Override public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
       int totalItemCount) {
     if (totalItemCount < itemCount) {

@@ -12,6 +12,7 @@ import android.widget.BaseAdapter;
  * See https://github.com/JakeWharton/u2020
  *
  * @author Jake Wharton
+ * @author Andrew Reitz
  */
 public abstract class BindableAdapter<T> extends BaseAdapter {
   private final Context context;
