@@ -1,5 +1,6 @@
 /*
  * Copyright 2014 Andrew Reitz
+ * Copyright 2014 Jake Wharton
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,5 +15,19 @@
  * limitations under the License.
  */
 
-ext.bintrayUsername = project.hasProperty('bintrayUsername')?project.getProperty('bintrayUsername'):System.getenv('BINTRAY_USER')?:''
-ext.bintrayKey = project.hasProperty('bintrayKey')?project.getProperty('bintrayKey'):System.getenv('BINTRAY_KEY')?:''
+package com.andrewreitz.velcro.rx;
+
+import rx.Observer;
+
+/**
+ * Observer that you only have to implement {@link #onNext(Object)}
+ *
+ * @author Jake Wharton
+ */
+public abstract class EndlessObserver<T> implements Observer<T> {
+  @Override public void onCompleted() {
+  }
+
+  @Override public void onError(Throwable throwable) {
+  }
+}
