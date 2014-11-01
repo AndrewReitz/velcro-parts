@@ -14,36 +14,19 @@
  * limitations under the License.
  */
 
-apply plugin: 'com.android.library'
+apply plugin: 'java'
+apply plugin: 'provided-base'
+apply plugin: 'optional-base'
 
 dependencies {
-  provided 'com.netflix.rxjava:rxjava-core:0.20.5'
-  provided 'com.squareup.retrofit:retrofit:1.6.1'
+  compile 'com.netflix.rxjava:rxjava-core:0.20.6'
+  compile 'com.squareup.retrofit:retrofit:1.7.1', optional
 }
 
-android {
-  compileSdkVersion rootProject.ext.compileSdkVersion
-  buildToolsVersion rootProject.ext.buildToolsVersion
-
-  defaultConfig {
-    minSdkVersion rootProject.ext.minSdkVersion
-  }
-
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_7
-    targetCompatibility JavaVersion.VERSION_1_7
-  }
-
-  lintOptions {
-    abortOnError false
-    disable 'InlinedApi', 'AllowBackup'
-  }
-}
-
-apply from: rootProject.file('gradle/checkstyle.gradle')
+apply from: rootProject.file('gradle/java/checkstyle.gradle')
 apply from: rootProject.file('gradle/credentials.gradle')
-apply from: rootProject.file('gradle/compile.gradle')
-apply from: rootProject.file('gradle/publishing.gradle')
+apply from: rootProject.file('gradle/java/compile.gradle')
+apply from: rootProject.file('gradle/java/publishing.gradle')
 apply from: rootProject.file('gradle/bintray.gradle')
 apply from: rootProject.file('gradle/artifactory.gradle')
 
