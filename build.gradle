@@ -17,6 +17,8 @@ import org._10ne.gradle.rest.RestTask
  * limitations under the License.
  */
 
+apply from: rootProject.file('gradle/credentials.gradle')
+
 subprojects {
   buildscript {
     repositories {
@@ -35,7 +37,7 @@ subprojects {
   }
 
   group = GROUP
-  version = VERSION_NAME
+  version = "$VERSION_NAME${!snapshot.equals("false") ? '-SNAPSHOT' : ''}"
 }
 
 ext {
@@ -52,12 +54,13 @@ buildscript {
     classpath "org._10ne.gradle:rest-gradle-plugin:0.3.1"
   }
 }
+
 apply plugin: "org.10ne.rest"
 
 task bintraySign(type: RestTask) {
   description = "Sign the release build on bintray"
   httpMethod = 'post'
-  uri = "https://api.bintray.com/gpg/pieces/maven/velcro_parts/versions/${version}"
+  uri = "https://api.bintray.com/gpg/pieces/maven/velcro_parts/versions/${VERSION_NAME}"
   username = bintrayUsername
   password = bintrayKey
   requestBody = [passphrase: signingPassword]

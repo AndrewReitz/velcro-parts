@@ -29,4 +29,3 @@ apply from: rootProject.file('gradle/java/compile.gradle')
 apply from: rootProject.file('gradle/java/publishing.gradle')
 apply from: rootProject.file('gradle/java/bintray.gradle')
 apply from: rootProject.file('gradle/java/artifactory.gradle')
-
