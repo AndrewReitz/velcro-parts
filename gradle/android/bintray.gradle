@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-apply plugin: 'java'
-apply plugin: 'provided-base'
-apply plugin: 'optional-base'
 
-dependencies {
-  compile 'com.netflix.rxjava:rxjava-core:0.20.6'
-  compile 'com.squareup.retrofit:retrofit:1.7.1', optional
+
+// Handles publication of distributions to Bintray
+
+apply plugin: 'com.jfrog.bintray'
+
+def attr = { String name -> project."$name" }
+
+bintray {
+    user = bintrayUsername
+    key = bintrayKey
+    publications = ['dist']
+    pkg {
+        repo = attr 'PROJECT_BINTRAY_REPO'
+        name = attr 'name'
+        desc = attr 'POM_DESCRIPTION'
+        licenses = ['Apache-2.0']
+        labels = ['android']
+    }
 }
-
-apply from: rootProject.file('gradle/java/checkstyle.gradle')
-apply from: rootProject.file('gradle/credentials.gradle')
-apply from: rootProject.file('gradle/java/compile.gradle')
-apply from: rootProject.file('gradle/java/publishing.gradle')
-apply from: rootProject.file('gradle/java/bintray.gradle')
-apply from: rootProject.file('gradle/java/artifactory.gradle')
-

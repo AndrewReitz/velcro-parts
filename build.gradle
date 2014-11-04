@@ -1,3 +1,6 @@
+import groovyx.net.http.ContentType
+import org._10ne.gradle.rest.RestTask
+
 /*
  * Copyright 2014 Andrew Reitz
  *
@@ -38,5 +41,25 @@ subprojects {
 ext {
   minSdkVersion = 7
   compileSdkVersion = 21
-  buildToolsVersion = '21.0.2'
+  buildToolsVersion = '21.1.0'
+}
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath "org._10ne.gradle:rest-gradle-plugin:0.3.1"
+  }
+}
+apply plugin: "org.10ne.rest"
+
+task bintraySign(type: RestTask) {
+  description = "Sign the release build on bintray"
+  httpMethod = 'post'
+  uri = "https://api.bintray.com/gpg/pieces/maven/velcro_parts/versions/${version}"
+  username = bintrayUsername
+  password = bintrayKey
+  requestBody = [passphrase: signingPassword]
+  contentType = ContentType.JSON
 }

@@ -14,21 +14,28 @@
  * limitations under the License.
  */
 
-// Handles publication of distributions to Bintray
 
-apply plugin: 'com.jfrog.bintray'
 
-def attr = { String name -> project."$name" }
+// handles distribution of snapshots to Artifactory (oss.jfrog.org)
 
-bintray {
-    user = bintrayUsername
-    key = bintrayKey
-    publications = ['dist']
-    pkg {
-        repo = attr 'PROJECT_BINTRAY_REPO'
-        name = attr 'name'
-        desc = attr 'POM_DESCRIPTION'
-        licenses = ['Apache-2.0']
-        labels = ['android']
+apply plugin: 'com.jfrog.artifactory'
+
+artifactory {
+    contextUrl = 'http://oss.jfrog.org/artifactory'
+    publish {
+        repository {
+            repoKey = 'oss-snapshot-local'
+            username = bintrayUsername
+            password = bintrayKey
+        }
+        defaults {
+            publications ('mavenJava')
+        }
     }
+    resolve {
+        repository {
+            repoKey = 'libs-release'
+        }
+    }
+
 }
