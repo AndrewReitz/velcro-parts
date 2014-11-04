@@ -23,10 +23,10 @@ def attr = { String name -> project."$name" }
 bintray {
     user = bintrayUsername
     key = bintrayKey
-    publications = ['dist']
+    publications = ['mavenJava']
     pkg {
         repo = attr 'PROJECT_BINTRAY_REPO'
-        name = attr 'name'
+        name = rootProject.name
         desc = attr 'POM_DESCRIPTION'
         licenses = ['Apache-2.0']
         labels = ['android']

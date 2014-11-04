@@ -43,6 +43,6 @@ apply from: rootProject.file('gradle/android/checkstyle.gradle')
 apply from: rootProject.file('gradle/credentials.gradle')
 apply from: rootProject.file('gradle/android/compile.gradle')
 apply from: rootProject.file('gradle/android/publishing.gradle')
-apply from: rootProject.file('gradle/bintray.gradle')
-apply from: rootProject.file('gradle/artifactory.gradle')
+apply from: rootProject.file('gradle/android/bintray.gradle')
+apply from: rootProject.file('gradle/android/artifactory.gradle')
 
