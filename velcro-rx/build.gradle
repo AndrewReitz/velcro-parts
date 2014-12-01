@@ -19,7 +19,7 @@ apply plugin: 'provided-base'
 apply plugin: 'optional-base'
 
 dependencies {
-  compile 'com.netflix.rxjava:rxjava-core:0.20.6'
+  compile 'io.reactivex:rxjava:1.0.1'
   compile 'com.squareup.retrofit:retrofit:1.7.1', optional
 }
 
