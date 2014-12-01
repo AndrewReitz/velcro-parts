@@ -59,6 +59,15 @@ public abstract class BindableAdapter<T> extends BaseAdapter {
     return view;
   }
 
+  /**
+   * Default implementation returns the current position as the id. Override for customization.
+   *
+   * {@inheritDoc}
+   */
+  @Override public long getItemId(int position) {
+    return position;
+  }
+
   /** Create a new instance of a view for the specified position. */
   public abstract View newView(LayoutInflater inflater, int position, ViewGroup container);
 
