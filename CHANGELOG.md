@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 1.0.1
+## Version 1.0.1 (12-2-2014)
 
 - Added default getItemId to bindable adapter.
 - Updated RxJava Version.
