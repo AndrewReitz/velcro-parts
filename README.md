@@ -3,6 +3,70 @@
 A bunch of little android libraries for throwing in your application
 to avoid having to lookup, copy and pasting from one application to another.
 
+# The Parts
+
+## velcro-betterviewanimator
+
+Adapted from Jake Wharton's U2020 application, `BetterViewanimator` is a view animator with an added
+methods `setDisplayedChildId` and `getDisplayedChildId` allowing you to do animations using
+resource ids.
+
+### Usage
+
+Add
+```groovy
+compile 'com.andrewreitz.velcro:velcro-bindableadapter:1.0.1'
+```
+to your build.gradle and extend `BetterviewAnimator`.
+
+## velcro-bindableadapter
+
+Adapted from Jake Wharton's U2020 application, `BindableAdapter` is an adapter that makes it easier
+inflate and get view reusage from Adapters for Lists.
+
+### Usage
+
+Add
+```groovy
+compile 'com.andrewreitz.velcro:velcro-bindableadapter:1.0.1'
+```
+to your build.gradle and extend `BindableAdapter`.
+
+## velcro-infinitescroll
+
+Adapted from Panayiotis Papageorgiou's infinite scrolling post, infintescroll contains the class
+`InfiniteScrollListener` for extension and handing off to ListViews for easy infinte scrolling.
+
+### Usage
+
+Add
+```groovy
+compile 'com.andrewreitz.velcro:velcro-infinitescroll:1.0.1'
+```
+to your build.gradle and extend `InfiniteScrollListener`. Then attach it to the ListView you want
+infinite scrolling on.
+
+## velcro-rx
+
+A bunch of useful RxJava classes.
+
+* `EndlessObserver` from Jake Wharton's U2020 app, is an observer that only requires you to implement
+`onNext`, and thus "never ends"
+* `EndObserver` from Jake Wharton's U2020 app, that introduces a new method on the Observer `onEnd`.
+This method is called when `onComplete` or `onEnd` is called, always notify you that the Observer
+has ended receiving events.
+* `RetrofitObserver` is an Observer to use with Retrofit. It will automatically give you an error
+as a `RetrofitError`. If there is an error other than retrofit you can handle this by overriding
+`nonRetrofitError`. This class also has the same qualities as `EndObserver`.
+
+### Usage
+
+Add
+```groovy
+compile 'com.andrewreitz.velcro:velcro-rx:1.0.1'
+```
+to your build.gradle and extends the classes as you need.
+
 # License
 
     Copyright 2014 Andrew Reitz

@@ -37,7 +37,7 @@ subprojects {
   }
 
   group = GROUP
-  version = "$VERSION_NAME${!snapshot.equals("false") ? '-SNAPSHOT' : ''}"
+  version = "$VERSION_NAME${project.hasProperty('release') ? '' : '-SNAPSHOT'}"
 }
 
 ext {
@@ -60,7 +60,7 @@ apply plugin: "org.10ne.rest"
 task bintraySign(type: RestTask) {
   description = "Sign the release build on bintray"
   httpMethod = 'post'
-  uri = "https://api.bintray.com/gpg/pieces/maven/velcro_parts/versions/${VERSION_NAME}"
+  uri = "https://api.bintray.com/gpg/pieces/maven/velcro-parts/versions/${VERSION_NAME}"
   username = bintrayUsername
   password = bintrayKey
   requestBody = [passphrase: signingPassword]
