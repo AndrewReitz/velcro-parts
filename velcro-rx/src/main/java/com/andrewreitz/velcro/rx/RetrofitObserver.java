@@ -42,10 +42,14 @@ public abstract class RetrofitObserver<T> implements Observer<T> {
     if (e instanceof RetrofitError) {
       this.onError((RetrofitError) e);
     } else {
-      throw new RuntimeException("Error other than retrofit error. "
-          + "You should override onError(Throwable e) to handle this", e);
+      nonRetrofitError(e);
     }
     onEnd();
+  }
+
+  public void nonRetrofitError(Throwable e) {
+    throw new RuntimeException("Error other than retrofit error. "
+        + "You should override nonRetrofitError(Throwable e) to handle this", e);
   }
 
   /**
