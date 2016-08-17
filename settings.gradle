@@ -14,8 +14,19 @@
  * limitations under the License.
  */
 
-include ':velcro-infinitescroll'
-include ':velcro-betterviewanimator'
-include ':velcro-bindableadapter'
-include ':velcro-rx'
+include \
+    'velcro-infinitescroll',
+    'velcro-betterviewanimator',
+    'velcro-bindableadapter',
+    'velcro-rx'
+
 rootProject.name = 'velcro-parts'
+
+def setBuildFile(project) {
+  project.buildFileName = "${project.name}.gradle"
+  project.children.each {
+    setBuildFile(it)
+  }
+}
+
+setBuildFile(rootProject)

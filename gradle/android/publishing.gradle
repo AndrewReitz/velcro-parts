@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Andrew Reitz
+ * Copyright 2016 Andrew Reitz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ artifacts {
 publishing {
   publications {
     dist(MavenPublication) {
-      groupId GROUP
+      groupId project.group
       artifactId project.name
-      version VERSION_NAME
+      version project.version
       artifact "${project.buildDir}/outputs/aar/${project.name}-release.aar"
       artifact androidJavadocsJar {
         classifier 'source'
@@ -35,7 +35,6 @@ publishing {
       artifact androidSourcesJar {
         classifier 'javadoc'
       }
-
       pom.withXml {
         def Node root = asNode()
         root.appendNode('name', project.name)

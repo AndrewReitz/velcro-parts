@@ -16,15 +16,20 @@
 
 apply plugin: 'checkstyle'
 
+dependencies {
+  checkstyle 'com.puppycrawl.tools:checkstyle:7.1'
+}
+
 checkstyle {
   configFile rootProject.file('checkstyle.xml')
   showViolations true
 }
 
 android.libraryVariants.all { variant ->
-  def name = variant.buildType.name
+  def build = variant.buildType.name
+  def flavor = variant.flavorName
 
-  def checkstyle = project.tasks.create "checkstyle${name.capitalize()}", Checkstyle
+  def checkstyle = project.tasks.create "checkstyle${flavor.capitalize()}${build.capitalize()}", Checkstyle
   checkstyle.dependsOn variant.javaCompile
   checkstyle.source variant.javaCompile.source
   checkstyle.classpath = project.fileTree(variant.javaCompile.destinationDir)
