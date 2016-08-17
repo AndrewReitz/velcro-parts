@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.andrewreitz.velcro.betterviewanimator;
+package com.andrewreitz.velcro;
 
 import android.content.Context;
 import android.support.annotation.IdRes;

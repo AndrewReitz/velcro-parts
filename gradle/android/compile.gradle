@@ -29,3 +29,11 @@ task androidSourcesJar(type: Jar) {
   classifier = 'sources'
   from android.sourceSets.main.java.source
 }
+
+if (JavaVersion.current().isJava8Compatible()) {
+  allprojects {
+    tasks.withType(Javadoc) {
+      options.addStringOption('Xdoclint:none', '-quiet')
+    }
+  }
+}

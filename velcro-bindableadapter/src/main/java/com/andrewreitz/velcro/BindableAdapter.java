@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.andrewreitz.velcro.bindableadapter;
+package com.andrewreitz.velcro;
 
 import android.content.Context;
 import android.view.LayoutInflater;

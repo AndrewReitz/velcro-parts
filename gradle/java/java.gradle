@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
-apply from: rootProject.file('gradle/java/java.gradle')
-apply plugin: 'nebula.optional-base'
+apply plugin: 'java'
 
-dependencies {
-  compile 'io.reactivex:rxjava:1.1.9'
-  compile 'com.squareup.retrofit:retrofit:1.9.0', optional
-}
+apply from: rootProject.file('gradle/java/checkstyle.gradle')
+apply from: rootProject.file('gradle/credentials.gradle')
+apply from: rootProject.file('gradle/java/compile.gradle')
+apply from: rootProject.file('gradle/java/publishing.gradle')
+apply from: rootProject.file('gradle/java/bintray.gradle')
+apply from: rootProject.file('gradle/java/artifactory.gradle')
