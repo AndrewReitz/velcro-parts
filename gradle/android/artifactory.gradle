@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Andrew Reitz
+ * Copyright 2016 Andrew Reitz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,13 @@
 
 apply plugin: 'com.jfrog.artifactory'
 
+def targetRepo = project.version.endsWith('-SNAPSHOT')?'oss-snapshot-local':'oss-release-local'
+
 artifactory {
     contextUrl = 'http://oss.jfrog.org/artifactory'
     publish {
         repository {
-            repoKey = 'oss-snapshot-local'
+            repoKey = targetRepo
             username = bintrayUsername
             password = bintrayKey
         }
@@ -35,5 +37,12 @@ artifactory {
             repoKey = 'libs-release'
         }
     }
+}
 
+artifactoryPublish {
+    onlyIf {
+        def pullRequest = System.getenv('TRAVIS_PULL_REQUEST')
+
+        !pullRequest || pullRequest=='false'
+    }
 }

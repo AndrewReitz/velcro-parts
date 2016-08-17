@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Andrew Reitz
+ * Copyright 2016 Andrew Reitz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,11 @@
  */
 
 apply plugin: 'java'
-apply plugin: 'provided-base'
-apply plugin: 'optional-base'
+apply plugin: 'nebula.optional-base'
 
 dependencies {
-  compile 'io.reactivex:rxjava:1.0.1'
-  compile 'com.squareup.retrofit:retrofit:1.7.1', optional
+  compile 'io.reactivex:rxjava:1.1.9'
+  compile 'com.squareup.retrofit:retrofit:1.9.0', optional
 }
 
 apply from: rootProject.file('gradle/java/checkstyle.gradle')
