@@ -15,10 +15,12 @@
  */
 
 include \
+    'velcro-core',
     'velcro-infinitescroll',
     'velcro-betterviewanimator',
     'velcro-bindableadapter',
-    'velcro-rx'
+    'velcro-rx',
+    'velcro-simplefragmentpageradapter'
 
 rootProject.name = 'velcro-parts'
 

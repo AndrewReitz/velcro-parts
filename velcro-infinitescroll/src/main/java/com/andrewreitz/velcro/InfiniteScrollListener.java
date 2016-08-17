@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.andrewreitz.velcro.infinitescroll;
+package com.andrewreitz.velcro;
 
 import android.widget.AbsListView;
 

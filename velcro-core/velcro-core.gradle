@@ -15,9 +15,3 @@
  */
 
 apply from: rootProject.file('gradle/java/java.gradle')
-apply plugin: 'nebula.optional-base'
-
-dependencies {
-  compile 'io.reactivex:rxjava:1.1.9'
-  compile 'com.squareup.retrofit:retrofit:1.9.0', optional
-}
