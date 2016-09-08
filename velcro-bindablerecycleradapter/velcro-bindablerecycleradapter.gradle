@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 Andrew Reitz
+ * Copyright 2016 Andrew Reitz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,8 @@
  * limitations under the License.
  */
 
-include \
-    'velcro-core',
-    'velcro-infinitescroll',
-    'velcro-betterviewanimator',
-    'velcro-bindableadapter',
-    'velcro-rx',
-    'velcro-simplefragmentpageradapter',
-    'velcro-bindablerecycleradapter'
+apply from: rootProject.file('gradle/android/android.gradle')
 
-rootProject.name = 'velcro-parts'
-
-def setBuildFile(project) {
-  project.buildFileName = "${project.name}.gradle"
-  project.children.each {
-    setBuildFile(it)
-  }
+dependencies {
+  provided "com.android.support:recyclerview-v7:$supportLibVersion"
 }
-
-setBuildFile(rootProject)

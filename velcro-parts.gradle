@@ -15,10 +15,10 @@
  */
 
 ext {
-  minSdkVersion = 8
+  minSdkVersion = 9
   compileSdkVersion = 24
   buildToolsVersion = '24.0.1'
-  supportLibVersion = '24.1.1'
+  supportLibVersion = '24.2.0'
 }
 
 buildscript {
