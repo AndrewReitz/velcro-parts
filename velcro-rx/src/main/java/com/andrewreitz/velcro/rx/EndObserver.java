@@ -23,6 +23,7 @@ import rx.Observer;
  * An {@link Observer} that always informs when it's ended.
  *
  * @author Jake Wharton
+ * @since 1.0.0
  */
 public abstract class EndObserver<T> implements Observer<T> {
   @Override public void onCompleted() {

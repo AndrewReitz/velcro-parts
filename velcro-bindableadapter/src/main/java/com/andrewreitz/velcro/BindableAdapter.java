@@ -26,10 +26,10 @@ import android.widget.BaseAdapter;
 /**
  * An implementation of {@link android.widget.BaseAdapter} which uses the new/bind pattern for its
  * views.
- * See https://github.com/JakeWharton/u2020
  *
  * @author Jake Wharton
  * @author Andrew Reitz
+ * @since 1.0.0
  */
 public abstract class BindableAdapter<T> extends BaseAdapter {
   private final Context context;

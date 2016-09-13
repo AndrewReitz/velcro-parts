@@ -23,11 +23,12 @@ import android.util.AttributeSet;
 import android.widget.ViewAnimator;
 
 /**
- * A View Animator that Easily allows setting which view is to be displayed
- * See https://github.com/JakeWharton/u2020
+ * A {@link ViewAnimator} that easily allows setting which view is to be displayed based off
+ * of a view ID.
  *
  * @author Jake Wharton
  * @author Andrew Reitz
+ * @since 1.0.0
  */
 public class BetterViewAnimator extends ViewAnimator {
   public BetterViewAnimator(Context context, AttributeSet attrs) {

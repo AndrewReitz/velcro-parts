@@ -9,6 +9,8 @@ import android.view.ViewGroup;
  * A recycler view adapter that makes life better.
  *
  * @param <I> The backing data model for the views.
+ * @author Andrew Reitz
+ * @since 2.0.0
  */
 public abstract class BindableRecyclerAdapter<I>
     extends RecyclerView.Adapter<BindableRecyclerAdapter.$GarbageViewHolder> {

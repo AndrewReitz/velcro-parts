@@ -20,10 +20,11 @@ import retrofit.RetrofitError;
 import rx.Observer;
 
 /**
- * Observer for RetrofitError, that will automatically parse the error into a RetrofitError. Only
+ * Observer for RetrofitError (Retrofit 1.x), that will automatically parse the error into a RetrofitError. Only
  * works for default Retrofit errors. Other errors will throw a {@link RuntimeException}.
  *
  * @author Andrew Reitz
+ * @since 1.0.0
  */
 public abstract class RetrofitObserver<T> implements Observer<T> {
 
