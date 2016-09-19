@@ -18,7 +18,7 @@ dependencies {
   androidTestCompile 'com.crittercism.dexmaker:dexmaker:1.4'
   androidTestCompile 'com.crittercism.dexmaker:dexmaker-dx:1.4'
 
-  androidTestCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-1') {
+  androidTestCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-2') {
     exclude group: 'org.codehaus.groovy'
     exclude group: 'junit'
   }
