@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-apply plugin: 'java'
+// apply groovy plugin because it will apply both groovy and java
+// plugins allow source to be written in java and tests to be
+// written in groovy (spock)
+apply plugin: 'groovy'
 
 apply from: rootProject.file('gradle/java/checkstyle.gradle')
 apply from: rootProject.file('gradle/credentials.gradle')
@@ -22,3 +25,9 @@ apply from: rootProject.file('gradle/java/compile.gradle')
 apply from: rootProject.file('gradle/java/publishing.gradle')
 apply from: rootProject.file('gradle/java/bintray.gradle')
 apply from: rootProject.file('gradle/java/artifactory.gradle')
+
+dependencies {
+  testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
+  testRuntime 'cglib:cglib-nodep:3.2.4'
+  testRuntime 'org.objenesis:objenesis:2.4'
+}
