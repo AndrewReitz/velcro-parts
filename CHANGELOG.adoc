@@ -2,7 +2,7 @@
 
 == Version 2.0.0
 * Updated all package names to be com.andrewreitz.velcro with the exception of rx
-* Added SimpleFragmentPagerAdapter
+* Added SimpleFragmentPagerAdapter, Transformers, Funcs
 * Min Version now 9
 
 == Version 1.0.1 (12-2-2014)
