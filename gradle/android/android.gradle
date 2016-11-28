@@ -40,7 +40,6 @@ android {
 }
 
 apply from: rootProject.file('gradle/android/androidTest.gradle')
-//apply from: rootProject.file('gradle/android/checkstyle.gradle')
 apply from: rootProject.file('gradle/credentials.gradle')
 apply from: rootProject.file('gradle/android/compile.gradle')
 apply from: rootProject.file('gradle/android/publishing.gradle')

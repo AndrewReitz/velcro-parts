@@ -31,6 +31,7 @@ import android.widget.ViewAnimator;
  * @since 1.0.0
  */
 public class BetterViewAnimator extends ViewAnimator {
+
   public BetterViewAnimator(Context context, AttributeSet attrs) {
     super(context, attrs);
   }
