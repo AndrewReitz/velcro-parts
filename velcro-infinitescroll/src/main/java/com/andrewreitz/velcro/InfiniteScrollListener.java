@@ -25,6 +25,7 @@ import android.widget.AbsListView;
  *
  * @author Panayiotis Papageorgiou
  * @author Andrew Reitz
+ * @since 1.0.0
  */
 public abstract class InfiniteScrollListener implements AbsListView.OnScrollListener {
   private int currentPage = 0;

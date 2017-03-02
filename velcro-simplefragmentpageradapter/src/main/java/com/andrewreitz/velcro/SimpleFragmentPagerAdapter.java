@@ -29,6 +29,9 @@ import static com.andrewreitz.velcro.internal.Preconditions.checkNotNull;
 /**
  * A simple implementation of a {@link FragmentPagerAdapter} that provides fragments
  * and their titles, to use with {@link android.support.v4.view.ViewPager}
+ *
+ * @author Andrew Reitz
+ * @since 2.0.0
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 

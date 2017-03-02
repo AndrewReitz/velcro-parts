@@ -22,5 +22,3 @@ checkstyle {
   configFile rootProject.file('checkstyle.xml')
   showViolations true
 }
-
-checkstyleMain.dependsOn compileJava

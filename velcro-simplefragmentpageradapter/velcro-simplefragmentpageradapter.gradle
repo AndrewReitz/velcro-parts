@@ -17,9 +17,6 @@
 apply from: rootProject.file('gradle/android/android.gradle')
 
 dependencies {
-  // ensure that when the project is published we include the transitive dependencies
-//  compile isTravis || !isSnapshot ? "com.andrewreitz.velcro:velcro-core:$version" : project(':velcro-core')
-//  compile "com.andrewreitz.velcro:velcro-core:$version"
   compile project(':velcro-core')
   provided "com.android.support:support-v4:$supportLibVersion"
 }

@@ -23,6 +23,7 @@ import rx.Observer;
  * Observer that you only have to implement {@link #onNext(Object)}
  *
  * @author Jake Wharton
+ * @since 1.0.0
  */
 public abstract class EndlessObserver<T> implements Observer<T> {
   @Override public void onCompleted() {
