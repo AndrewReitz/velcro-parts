@@ -14,4 +14,14 @@ android {
 dependencies {
   androidTestCompile 'org.codehaus.groovy:groovy:2.4.7:grooid'
   androidTestCompile 'com.andrewreitz:spock-android:2.0.0-SNAPSHOT'
+
+  androidTestCompile 'com.crittercism.dexmaker:dexmaker:1.4'
+  androidTestCompile 'com.crittercism.dexmaker:dexmaker-dx:1.4'
+
+  androidTestCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-2') {
+    exclude group: 'org.codehaus.groovy'
+    exclude group: 'junit'
+  }
+
+  testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-3'
 }
