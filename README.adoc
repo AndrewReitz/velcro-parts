@@ -15,7 +15,7 @@ resource ids.
 
 Add
 ```groovy
-compile 'com.andrewreitz.velcro:velcro-bindableadapter:1.0.1'
+compile 'com.andrewreitz.velcro:velcro-betterviewanimator:1.0.1'
 ```
 to your build.gradle and extend `BetterviewAnimator`.
 
