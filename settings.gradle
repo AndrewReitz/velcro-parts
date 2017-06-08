@@ -22,7 +22,8 @@ include \
     'velcro-rx',
     'velcro-simplefragmentpageradapter',
     'velcro-bindablerecycleradapter',
-    'velcro-rx-android'
+    'velcro-rx-android',
+    'velcro-test-internal'
 
 rootProject.name = 'velcro-parts'
 

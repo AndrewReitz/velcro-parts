@@ -17,6 +17,6 @@
 apply from: rootProject.file('gradle/android/android.gradle')
 
 dependencies {
-  compile 'io.reactivex:rxjava:1.2.3'
+  compile "io.reactivex:rxjava:$rxJavaVersion"
   compile 'io.reactivex:rxandroid:1.2.1'
 }

@@ -15,4 +15,3 @@
  */
 
 apply from: rootProject.file('gradle/android/android.gradle')
-

@@ -17,21 +17,26 @@
 ext {
   minSdkVersion = 9
   compileSdkVersion = 25
-  buildToolsVersion = '25.0.1'
-  supportLibVersion = '25.0.1'
+  buildToolsVersion = '25.0.2'
+  supportLibVersion = '25.3.1'
+  spockVersion = '1.1-groovy-2.4-rc-4'
+  byteBuddyVersion = '1.6.13'
+  rxJavaVersion = '1.2.9'
+  cglibVersion = '3.2.5'
 }
 
 buildscript {
   repositories {
     jcenter()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.2.2'
-    classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:1.1.0'
-    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+    classpath 'com.android.tools.build:gradle:2.3.1'
+    classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:1.2.0-SNAPSHOT'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:3.2.0'
-    classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:3.0.3'
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
+    classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:3.1.0'
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
   }
 }
 
@@ -40,6 +45,19 @@ allprojects {
   version = '2.0.0-SNAPSHOT'
 
   apply plugin: 'com.github.ben-manes.versions'
+
+  dependencyUpdates.resolutionStrategy = {
+    componentSelection { rules ->
+      rules.all { ComponentSelection selection ->
+        boolean rejected = ['alpha', 'beta', 'rc', 'preview', 'cr', 'm'].any { qualifier ->
+          selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+        }
+        if (rejected) {
+          selection.reject('Release candidate')
+        }
+      }
+    }
+  }
 }
 
 subprojects {
@@ -50,6 +68,6 @@ subprojects {
 }
 
 ext {
-  isSnapshot = version.endsWith("SNAPSHOT")
-  isTravis = System.getenv("TRAVIS") != null
+  isSnapshot = version.endsWith('SNAPSHOT')
+  isTravis = System.getenv('TRAVIS') != null
 }

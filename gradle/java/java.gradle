@@ -27,7 +27,7 @@ apply from: rootProject.file('gradle/java/bintray.gradle')
 apply from: rootProject.file('gradle/java/artifactory.gradle')
 
 dependencies {
-  testCompile 'org.spockframework:spock-core:1.1-groovy-2.4-rc-2'
-  testRuntime 'cglib:cglib-nodep:3.2.4'
-  testRuntime 'org.objenesis:objenesis:2.4'
+  testCompile "org.spockframework:spock-core:$spockVersion"
+  testRuntime "cglib:cglib-nodep:$cglibVersion"
+  testRuntime "net.bytebuddy:byte-buddy:$byteBuddyVersion"
 }
