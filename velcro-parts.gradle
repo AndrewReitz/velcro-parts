@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Andrew Reitz
+ * Copyright 2017 Andrew Reitz
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,15 +28,15 @@ ext {
 buildscript {
   repositories {
     jcenter()
-    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
+    maven { url 'https://maven.google.com' }
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.3.1'
-    classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:1.2.0-SNAPSHOT'
+    classpath 'com.android.tools.build:gradle:2.3.2'
+    classpath 'org.codehaus.groovy:groovy-android-gradle-plugin:1.2.0'
     classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:3.2.0'
     classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:3.1.0'
-    classpath 'com.github.ben-manes:gradle-versions-plugin:0.14.0'
+    classpath 'com.github.ben-manes:gradle-versions-plugin:0.15.0'
   }
 }
 
@@ -63,7 +63,6 @@ allprojects {
 subprojects {
   repositories {
     jcenter()
-    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local' }
   }
 }
 

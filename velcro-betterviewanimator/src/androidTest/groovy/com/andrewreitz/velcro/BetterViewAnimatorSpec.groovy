@@ -1,28 +1,67 @@
 package com.andrewreitz.velcro
 
-import android.content.Context
+import android.support.test.espresso.NoMatchingViewException
+import android.support.test.espresso.UiController
+import android.support.test.espresso.ViewAction
+import android.support.test.espresso.ViewAssertion
+import android.support.test.espresso.matcher.ViewMatchers
+import android.support.test.rule.ActivityTestRule
 import android.view.View
 import com.andrewreitz.spock.android.AndroidSpecification
-import com.andrewreitz.spock.android.WithContext
+import groovy.transform.CompileStatic
+import org.hamcrest.Matcher
+import org.junit.Rule
+
+import static android.support.test.espresso.Espresso.onView
+import static android.support.test.espresso.matcher.ViewMatchers.withId
+
+import java.lang.Void as Should
 
 class BetterViewAnimatorSpec extends AndroidSpecification {
 
-  @WithContext Context context
+  @Rule ActivityTestRule<BetterViewAnimatorTestActivity> activityRule =
+      new ActivityTestRule<>(BetterViewAnimatorTestActivity)
 
-  void "should_do_shit"() {
-    given:
-    context.getApplicationInfo()
-    def classUnderTest = new BetterViewAnimator(context, null)
-    (1..5).each {
-      def childView = new View()
-      childView.id = it
-      classUnderTest.addView(childView)
-    }
-
+  Should "set the display child by id"() {
     when:
-    classUnderTest.displayedChildId = 2
+    onView(withId(R.id.better_view_animator)).perform(new SetDisplayChildViewAction(viewId: R.id.test_view))
+    onView(withId(R.id.better_view_animator)).check(new SetDisplayChildViewAssertion(expectedViewId: R.id.test_view))
 
     then:
-    classUnderTest.displayedChildId == 2
+    noExceptionThrown()
+  }
+}
+
+@CompileStatic
+class SetDisplayChildViewAction implements ViewAction {
+
+  int viewId
+
+  @Override Matcher<View> getConstraints() {
+    return ViewMatchers.isAssignableFrom(BetterViewAnimator)
+  }
+
+  @Override String getDescription() {
+    return 'set the display child'
+  }
+
+  @Override void perform(UiController uiController, View view) {
+    BetterViewAnimator betterViewAnimator = view as BetterViewAnimator
+    betterViewAnimator.displayedChildId = viewId
+  }
+}
+
+@CompileStatic
+class SetDisplayChildViewAssertion implements ViewAssertion {
+
+  int expectedViewId
+
+  @Override void check(View view, NoMatchingViewException noViewFoundException) {
+    if (noViewFoundException) {
+      throw noViewFoundException
+    }
+
+    BetterViewAnimator betterViewAnimator = view as BetterViewAnimator
+    assert betterViewAnimator.displayedChildId == expectedViewId
   }
 }
