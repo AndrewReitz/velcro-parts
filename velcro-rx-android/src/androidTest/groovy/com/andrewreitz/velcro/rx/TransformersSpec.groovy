@@ -6,8 +6,10 @@ import rx.observers.TestSubscriber
 
 import java.util.concurrent.TimeUnit
 
+import java.lang.Void as Should
+
 class TransformersSpec extends AndroidSpecification {
-  void "should run on a background thread"() {
+  Should "run on a background thread"() {
     given:
     def testSubscriber = new TestSubscriber()
     def mainThread = Thread.currentThread()

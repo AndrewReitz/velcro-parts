@@ -1,3 +1,5 @@
+:libraryVersion: 2.0.0
+
 = velcro-parts
 
 A bunch of little android libraries for throwing in your application
@@ -5,7 +7,7 @@ to avoid having to lookup, copy and pasting from one application to another.
 
 = The Parts
 
-== velcro-betterviewanimator
+== BetterViewAnimator
 
 Adapted from Jake Wharton's U2020 application, `BetterViewanimator` is a view animator with an added
 methods `setDisplayedChildId` and `getDisplayedChildId` allowing you to do animations using
@@ -14,12 +16,15 @@ resource ids.
 === Usage
 
 Add
-```groovy
-compile 'com.andrewreitz.velcro:velcro-bindableadapter:1.0.1'
-```
-to your build.gradle and extend `BetterviewAnimator`.
 
-== velcro-bindableadapter
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-bindableadapter:{libraryVersion}'
+----
+
+to your build.gradle and extend `BetterViewAnimator`.
+
+== BindableAdapter
 
 Adapted from Jake Wharton's U2020 application, `BindableAdapter` is an adapter that makes it easier
 inflate and get view reusage from Adapters for Lists.
@@ -27,28 +32,51 @@ inflate and get view reusage from Adapters for Lists.
 === Usage
 
 Add
-```groovy
-compile 'com.andrewreitz.velcro:velcro-bindableadapter:1.0.1'
-```
+
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-bindableadapter:{libraryVersion}'
+----
+
 to your build.gradle and extend `BindableAdapter`.
 
-== velcro-infinitescroll
+== BindableRecyclerAdapter
 
-Adapted from Panayiotis Papageorgiou's infinite scrolling post, infintescroll contains the class
-`InfiniteScrollListener` for extension and handing off to ListViews for easy infinte scrolling.
+Similar to `BindableAdapter` except you use it with `RecyclerViews`. Simplifies the process and
+abstracts away the need for view holders.
 
 === Usage
 
 Add
-```groovy
-compile 'com.andrewreitz.velcro:velcro-infinitescroll:1.0.1'
-```
-to your build.gradle and extend `InfiniteScrollListener`. Then attach it to the ListView you want
+
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-bindablerecycleradapter:{libraryVersion}'
+----
+
+to your dependencies and extend `BindableRecyclerAdapter`.
+
+== InfiniteScroll
+
+Adapted from Panayiotis Papageorgiou's infinite scrolling post, InfiniteScroll contains the class
+`InfiniteScrollListener` for extension and handing off to ListViews for easy infinite scrolling.
+
+=== Usage
+
+Add
+
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-infinitescroll:{libraryVersion}'
+----
+
+to your dependencies and extend `InfiniteScrollListener`. Then attach it to the ListView you want
 infinite scrolling on.
 
-== velcro-rx
+== Velcro Rx
 
 A bunch of useful RxJava classes.
+(Mostly deprecated for RxJava 1.x and Retrofit 1.x)
 
 * `EndlessObserver` from Jake Wharton's U2020 app, is an observer that only requires you to implement
 `onNext`, and thus "never ends"
@@ -62,15 +90,26 @@ as a `RetrofitError`. If there is an error other than retrofit you can handle th
 === Usage
 
 Add
-```groovy
-compile 'com.andrewreitz.velcro:velcro-rx:1.0.1'
-```
-to your build.gradle and extends the classes as you need.
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-rx:{libraryVersion}'
+----
+
+to your dependencies and extends the classes as you need.
+
+== Velcro Rx Android
+
+Simple Easy to Use Transformation for Android Schedulers.
+
+[source, groovy, subs='attributes']
+----
+compile 'com.andrewreitz.velcro:velcro-rx-android:{libraryVersion}'
+----
 
 = License
 
-```
-Copyright 2014 Andrew Reitz
+====
+Copyright 2017 Andrew Reitz
 Copyright 2014 Jake Wharton
 Copyright 2014 Panayiotis Papageorgiou
 
@@ -85,4 +124,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-```
+====

@@ -18,8 +18,8 @@ apply from: rootProject.file('gradle/java/java.gradle')
 apply plugin: 'nebula.optional-base'
 
 dependencies {
-  compile 'io.reactivex:rxjava:1.2.6', optional
+  compile "io.reactivex:rxjava:$rxJavaVersion", optional
 
   compile 'com.squareup.retrofit:retrofit:1.9.0', optional
-  compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0', optional
+  compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0', optional
 }
